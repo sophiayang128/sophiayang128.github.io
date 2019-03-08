@@ -217,14 +217,14 @@
 </li>
 <li><p><code>margin</code> is used to display the <strong>span</strong> tag</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.status &#123;</span><br><span class="line">  width: 10px;</span><br><span class="line">  height: 10px;</span><br><span class="line">  background: #c0392b;</span><br><span class="line">  display: block;</span><br><span class="line">  margin: 8px 10px 0 0;</span><br><span class="line">  float: left;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  &amp;.checked-in &#123;</span><br><span class="line">    background: #2ecc71;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
 <p><code>&amp;.checked-in</code> = <code>.status.checked-in</code></p>
-<ol start="3">
-<li>Dynamically add status to styles<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;status&quot;</span><br><span class="line">         [class.checked-in]=&quot;passenger.checkedIn&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dynamically add status to styles</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;status&quot;</span><br><span class="line">         [class.checked-in]=&quot;passenger.checkedIn&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p> If we want to bind to multiple classes, <code>ngClass</code> can be used:</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;status&quot;</span><br><span class="line">    [ngClass] = &quot;&#123;</span><br><span class="line">        &apos;checked-in&apos;: passenger.checkedIn,</span><br><span class="line">        &apos;checked-out&apos;: !passenger.checkedIn</span><br><span class="line">    &#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>If we want to bind to multiple classes, <code>ngClass</code> can be used:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;status&quot;</span><br><span class="line">         [ngClass] = &quot;&#123;</span><br><span class="line">           &apos;checked-in&apos;: passenger.checkedIn,</span><br><span class="line">           &apos;checked-out&apos;: !passenger.checkedIn</span><br><span class="line">         &#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
 <h2 id="4-ngStyle-and-style-bindings"><a href="#4-ngStyle-and-style-bindings" class="headerlink" title="4. ngStyle and style bindings"></a>4. ngStyle and style bindings</h2><ol>
 <li><p>Using <code>style.backgroundColor</code> property to dynamically change status color</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span class=&quot;status&quot;</span><br><span class="line">         [style.backgroundColor]=&quot;(passenger.checkedIn ? &apos;#2ecc71&apos;:&apos;#c0392b&apos;)&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
@@ -240,11 +240,12 @@
 </li>
 <li><p>Date pipeline can transform timestamp to actaul date:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;date&quot;&gt;</span><br><span class="line">       Check in date: &#123;&#123; passenger.checkedInDate | date: &apos;yMMMMd&apos; | uppercase&#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p><code>MMM</code> is a short form of month and <code>MMMM</code> is the whole name of month<br><code>uppercase pipeline</code> can make date uppercases, remember to put it after date is converted, or it will fail because number cannot be turned to uppercase</p>
-<ol start="4">
-<li><code>pipe</code> will appear in DOM if added on a property instead of an object =&gt; <strong>Good for debugging!</strong></li>
-</ol>
+<ul>
+<li><code>MMM</code> is a short form of month and <code>MMMM</code> is the whole name of month</li>
+<li><code>uppercase pipeline</code> can make date uppercases, remember to put it after date is converted, or it will fail because number cannot be turned to uppercase</li>
+</ul>
 </li>
+<li><code>pipe</code> will appear in DOM if added on a property instead of an object =&gt; <strong>Good for debugging!</strong></li>
 </ol>
 <h2 id="6-Safe-navigation-operator"><a href="#6-Safe-navigation-operator" class="headerlink" title="6. Safe navigation operator"></a>6. Safe navigation operator</h2><ol>
 <li><p>Adding a <code>children</code> property to <code>Passenger</code> interface:</p>
@@ -266,10 +267,12 @@
 <h2 id="3-Feature-modules-with-NgModule"><a href="#3-Feature-modules-with-NgModule" class="headerlink" title="3. Feature modules with @NgModule"></a>3. Feature modules with @NgModule</h2><ol>
 <li>Inside of <code>@NgModule</code>, we pass in configuration object</li>
 <li><code>CommonModule</code>: provides <strong>ngIf</strong>, <strong>ngFor</strong>…</li>
-<li>We can build custom modules:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; CommonModule &#125; from &apos;@angular/common&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line"></span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line">export class PassengerDashboardModule &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>We can build custom modules:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; NgModule &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; CommonModule &#125; from &apos;@angular/common&apos;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line"></span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line">export class PassengerDashboardModule &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> And import it to <code>app.module.ts</code>:</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; PassengerDashboardModule &#125; from &apos;./passenger-dashboard/passenger-dashboard.module&apos;;</span><br><span class="line"></span><br><span class="line">imports: [</span><br><span class="line">    // angular modules</span><br><span class="line">    BrowserModule,</span><br><span class="line">    CommonModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    // custom modules</span><br><span class="line">    PassengerDashboardModule</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>And import it to <code>app.module.ts</code>:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; PassengerDashboardModule &#125; from &apos;./passenger-dashboard/passenger-dashboard.module&apos;;</span><br><span class="line"></span><br><span class="line">imports: [</span><br><span class="line">    // angular modules</span><br><span class="line">    BrowserModule,</span><br><span class="line">    CommonModule,</span><br><span class="line">    FormsModule,</span><br><span class="line">    // custom modules</span><br><span class="line">    PassengerDashboardModule</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure></p>
 <h2 id="4-Creating-a-container-smart-component"><a href="#4-Creating-a-container-smart-component" class="headerlink" title="4. Creating a container (smart) component"></a>4. Creating a container (smart) component</h2><ol>
 <li>In <code>passenger-dashboard.module.ts</code>, we need to export the <strong>PassengerDashboardComponent</strong> so that it can be imported and used in <code>app.component.ts</code> <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    PassengerDashboardComponent</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    CommonModule</span><br><span class="line"></span><br><span class="line">  ],</span><br><span class="line">  exports: [</span><br><span class="line">    PassengerDashboardComponent</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
@@ -296,10 +299,12 @@
 </li>
 <li><p>We’re passing data from container components to presentational components</p>
 </li>
-<li>Build a <code>checkedInCount</code> function to return the number of passengers checked in:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">checkedInCount(): number &#123;</span><br><span class="line">    if (!this.items) return;</span><br><span class="line">    return this.items.filter((passenger: Passenger) =&gt; &#123;</span><br><span class="line">      return passenger.checkedIn;</span><br><span class="line">    &#125;).length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>Build a <code>checkedInCount</code> function to return the number of passengers checked in:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">checkedInCount(): number &#123;</span><br><span class="line">    if (!this.items) return;</span><br><span class="line">    return this.items.filter((passenger: Passenger) =&gt; &#123;</span><br><span class="line">      return passenger.checkedIn;</span><br><span class="line">    &#125;).length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> And the filter function can be shortened to:</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">return this.items.filter((passenger: Passenger) =&gt; passenger.checkedIn).length;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>And the filter function can be shortened to:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">return this.items.filter((passenger: Passenger) =&gt; passenger.checkedIn).length;</span><br></pre></td></tr></table></figure></p>
 <h2 id="8-Dynamic-Input-values-with-ngFor"><a href="#8-Dynamic-Input-values-with-ngFor" class="headerlink" title="8. Dynamic @Input values with *ngFor"></a>8. Dynamic @Input values with *ngFor</h2><ol>
 <li>Input data can also be dynamic data inside of a <code>*ngFor</code> loop:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;passenger-detail</span><br><span class="line">       *ngFor=&quot;let passenger of passengers;&quot;</span><br><span class="line">       [detail]=&quot;passenger&quot;&gt;</span><br><span class="line">   &lt;/passenger-detail&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -310,11 +315,10 @@
 </li>
 <li><p>Using <code>Output</code> and <code>EvenEmitter</code> to commit changes to parent component</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;passenger-detail</span><br><span class="line">       *ngFor=&quot;let passenger of passengers;&quot;</span><br><span class="line">       [detail]=&quot;passenger&quot;</span><br><span class="line">       (edit)=&quot;handleEdit($event)&quot;</span><br><span class="line">       (remove)=&quot;handleRemove($event)&quot;&gt;</span><br><span class="line">   &lt;/passenger-detail&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button (click)=&quot;onRemove()&quot;&gt;</span><br><span class="line">    Remove</span><br><span class="line">&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">@Output()</span><br><span class="line">edit: EventEmitter&lt;any&gt; = new EventEmitter();</span><br><span class="line">@Output()</span><br><span class="line">remove: EventEmitter&lt;any&gt; = new EventEmitter();</span><br><span class="line"></span><br><span class="line">onRemove() &#123;</span><br><span class="line">    this.remove.emit(this.detail);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toggleEdit() &#123;</span><br><span class="line">    if (this.editing) &#123;</span><br><span class="line">        this.edit.emit(this.detail);</span><br><span class="line">    &#125;</span><br><span class="line">    this.editing = !this.editing;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button (click)=&quot;onRemove()&quot;&gt;</span><br><span class="line">       Remove</span><br><span class="line">   &lt;/button&gt;</span><br><span class="line"></span><br><span class="line">   @Output()</span><br><span class="line">   edit: EventEmitter&lt;any&gt; = new EventEmitter();</span><br><span class="line">@Output()</span><br><span class="line"> 	remove: EventEmitter&lt;any&gt; = new EventEmitter();</span><br><span class="line"></span><br><span class="line">	onRemove() &#123;</span><br><span class="line">   	this.remove.emit(this.detail);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   toggleEdit() &#123;</span><br><span class="line">    if (this.editing) &#123;</span><br><span class="line">        this.edit.emit(this.detail);</span><br><span class="line">    &#125;</span><br><span class="line">    this.editing = !this.editing;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>We can consider component to be API, where we can pass in data and also after processing, we can output the modified data</li>
+<li><p>We can consider component to be API, where we can pass in data and also after processing, we can output the modified data</p>
+</li>
 </ol>
 <h2 id="10-Immutable-state-changes"><a href="#10-Immutable-state-changes" class="headerlink" title="10. Immutable state changes"></a>10. Immutable state changes</h2><ol>
 <li><p>Using <code>filter</code> to get a collection based on certain conditions</p>
@@ -333,11 +337,12 @@
 <h1 id="Services-Http-and-Observables"><a href="#Services-Http-and-Observables" class="headerlink" title="Services, Http and Observables"></a>Services, Http and Observables</h1><h2 id="1-Data-Services-and-Dependency-Injection"><a href="#1-Data-Services-and-Dependency-Injection" class="headerlink" title="1. Data Services and Dependency Injection"></a>1. Data Services and Dependency Injection</h2><ol>
 <li><code>PassengerDashboardService</code> need to be imported in <strong>passenger-dashboard.module.ts</strong> and be defined in <code>providers</code></li>
 <li>One of components may rely on the service we created, so we make this service available to these components, and it’s all done by <strong>Dependency Injection</strong></li>
-<li><code>PassengerDashboardService</code> is acting like a data layer<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Passenger &#125; from &apos;./models/passenger.interface&apos;;</span><br><span class="line"></span><br><span class="line">export class PassengerDashboardService &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getPassengers(): Passenger[] &#123;</span><br><span class="line">    return ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p><code>PassengerDashboardService</code> is acting like a data layer</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Passenger &#125; from &apos;./models/passenger.interface&apos;;</span><br><span class="line"></span><br><span class="line">export class PassengerDashboardService &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getPassengers(): Passenger[] &#123;</span><br><span class="line">    return ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ngOnInit() &#123;</span><br><span class="line">    this.passengers = this.passengerService.getPassengers();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> The above a synchronous call, which is synchronously being bound to <code>this.passengers</code></p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ngOnInit() &#123;</span><br><span class="line">    this.passengers = this.passengerService.getPassengers();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The above a synchronous call, which is synchronously being bound to <code>this.passengers</code></p>
 <h2 id="Some-other-knowledge"><a href="#Some-other-knowledge" class="headerlink" title="Some other knowledge"></a>Some other knowledge</h2><ol>
 <li><code>div</code>: block-line =&gt; like having a line-break before and after </li>
 <li><code>span</code>: in-line =&gt; small chunck of HTML inside a line</li>
