@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My personal blog on github">
+    <meta name="keyword" content>
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Jinyang" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        Ultimate Courses Angular 2｜Jinyang&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="http://jinyang.github.io/2019/03/08/Ultimate-Courses-Angular-2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Jinyang
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">Tags</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="http://po16szslz.bkt.clouddn.com/background_img_4.jpg">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('http://po16szslz.bkt.clouddn.com/background_img_4.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>Ultimate Courses Angular 2</h1>
+                    
+                    <span class="meta">
+                          Author: Jinyang Tang
+                        <span>
+                          Date: 2019-03-08
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#-Angular" title="-Angular">-Angular</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            Ultimate Courses Angular 2
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="Services-Http-and-Observables"><a href="#Services-Http-and-Observables" class="headerlink" title="Services, Http and Observables"></a>Services, Http and Observables</h1><h2 id="1-Data-Services-and-Dependency-Injection"><a href="#1-Data-Services-and-Dependency-Injection" class="headerlink" title="1. Data Services and Dependency Injection"></a>1. Data Services and Dependency Injection</h2><ol>
+<li><code>PassengerDashboardService</code> need to be imported in <strong>passenger-dashboard.module.ts</strong> and be defined in <code>providers</code></li>
+<li>One of components may rely on the service we created, so we make this service available to these components, and it’s all done by <strong>Dependency Injection</strong></li>
+<li><p><code>PassengerDashboardService</code> is acting like a data layer</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Passenger &#125; from &apos;./models/passenger.interface&apos;;</span><br><span class="line"></span><br><span class="line">export class PassengerDashboardService &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getPassengers(): Passenger[] &#123;</span><br><span class="line">    return ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ngOnInit() &#123;</span><br><span class="line">    this.passengers = this.passengerService.getPassengers();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> The above a synchronous call, which is synchronously being bound to <code>this.passengers</code></p>
+</li>
+</ol>
+<h2 id="2-Understanding-Injectable"><a href="#2-Understanding-Injectable" class="headerlink" title="2. Understanding @Injectable"></a>2. Understanding @Injectable</h2><ol>
+<li><code>HttpModule</code> is imported from <code>@angular/http</code></li>
+<li><p>We can inject <strong>HttpModule</strong> into our <code>PassengerDashboardService</code> (<code>Http</code> token is injected)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">constructor(private http: Http) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The above is not totally correct, because when we’re relying on some service like <em>Http</em>, we need to import <code>Injectable</code> besides <code>HttpModule</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">   import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line">export class PassengerDashboardService &#123;</span><br><span class="line">  constructor(private http: Http) &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="3-Http-data-fetching-with-Observables"><a href="#3-Http-data-fetching-with-Observables" class="headerlink" title="3. Http data fetching with Observables"></a>3. Http data fetching with Observables</h2><ol>
+<li>We need <code>@Injectable</code> becasue we need external dependency like <code>Http</code></li>
+<li><p>Detailed data in <code>getPassengers</code> will be moved to <code>db.json</code> and need to be converted to <strong>json</strong> format:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;passengers&quot;: [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;id&quot;: 1,</span><br><span class="line">      &quot;fullname&quot;: &quot;Stephen&quot;,</span><br><span class="line">      &quot;checkedIn&quot;: true,</span><br><span class="line">      &quot;checkedInDate&quot;: 1490742000000,</span><br><span class="line">      &quot;children&quot;: null</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;id&quot;: 2,</span><br><span class="line">      &quot;fullname&quot;: &quot;Rose&quot;,</span><br><span class="line">      &quot;checkedIn&quot;: false,</span><br><span class="line">      &quot;checkedInDate&quot;: null,</span><br><span class="line">      &quot;children&quot;: [&#123; &quot;name&quot;: &quot;Ted&quot;, &quot;age&quot;: 12&#125;, &#123;&quot;name&quot;: &quot;Chloe&quot;, &quot;age&quot;: 7&#125;]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;id&quot;: 3,</span><br><span class="line">      &quot;fullname&quot;: &quot;James&quot;,</span><br><span class="line">      &quot;checkedIn&quot;: true,</span><br><span class="line">      &quot;checkedInDate&quot;: 1491606000000,</span><br><span class="line">      &quot;children&quot;: null</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>this.http</code> is an <strong>Observable</strong> not Passenger[]</p>
+</li>
+<li><code>db.json</code> is acting like a local API</li>
+<li><p><code>json()</code> method is used to extract data from <strong>response</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Http, Response &#125; from &apos;@angular/http&apos;;</span><br><span class="line">import &#123; Observable &#125; from &apos;rxjs/Observable&apos;;</span><br><span class="line">import &apos;rxjs/add/operator/map&apos;;</span><br><span class="line"></span><br><span class="line">const PASSENGER_API: string = &apos;/api/passengers&apos;;</span><br><span class="line"></span><br><span class="line">getPassengers(): Observable&lt;Passenger[]&gt; &#123;</span><br><span class="line">   return this.http</span><br><span class="line">     .get(PASSENGER_API)</span><br><span class="line">     .map((response: Response) =&gt; &#123;</span><br><span class="line">       return response.json();</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ngOnInit</code> need to be modified because now we’re getting <strong>Obeservable</strong> from service:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ngOnInit() &#123;</span><br><span class="line">    this.passengerService</span><br><span class="line">    .getPassengers()</span><br><span class="line">    .subscribe((data: Passenger[]) =&gt; &#123;</span><br><span class="line">      this.passengers = data;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Data may have latency for reading from API, so when calling <code>length</code> method, we need to use <code>items?.length</code></p>
+</li>
+</ol>
+<h2 id="4-Http-put-delete-with-immutable-state"><a href="#4-Http-put-delete-with-immutable-state" class="headerlink" title="4. Http put, delete with immutable state"></a>4. Http put, delete with immutable state</h2><ol>
+<li><p>Use <code>${}</code> to compose java string inside </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">updatePassenger(passenger: Passenger): Observable&lt;Passenger&gt; &#123;</span><br><span class="line">    return this.http</span><br><span class="line">      .put(`$&#123;PASSENGER_API&#125;/$&#123;passenger.id&#125;`, passenger)</span><br><span class="line">      .map((response: Response) =&gt; &#123;</span><br><span class="line">        return response.json();</span><br><span class="line">      &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>We call <code>subscribe</code> method on <code>Observable</code> which allows us to listen in on any data that is coming through</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">handleEdit(event: Passenger) &#123;</span><br><span class="line">    this.passengerService</span><br><span class="line">      .updatePassenger(event)</span><br><span class="line">      .subscribe((data: Passenger) =&gt; &#123;</span><br><span class="line">        this.passengers = this.passengers.map((passenger: Passenger) =&gt; &#123;</span><br><span class="line">          if (passenger.id === event.id) &#123;</span><br><span class="line">            passenger = Object.assign(&#123;&#125;, passenger, event);</span><br><span class="line">          &#125;</span><br><span class="line">          return passenger;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>When we edit the first passenger, http is sending a <strong>put</strong> request to change the passenger with id = 1, which will be locally saved to our <code>db.json</code> file.</li>
+<li>When we render a page or everytime refresh it, http is sending a <strong>get</strong> request to get all info from <code>db.json</code> file</li>
+</ul>
+</li>
+<li><p>Using <code>delete</code> request to remove a passenger</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">	removePassenger(passenger: Passenger): Observable&lt;Passenger&gt; &#123;</span><br><span class="line">	    return this.http</span><br><span class="line">	      .delete(`$&#123;PASSENGER_API&#125;/$&#123;passenger.id&#125;`)</span><br><span class="line">	      .map((response: Response) =&gt; &#123;</span><br><span class="line">	        return response.json();</span><br><span class="line">	      &#125;)</span><br><span class="line">	&#125;</span><br><span class="line">``` </span><br><span class="line">    ```Angular</span><br><span class="line">        handleRemove(event: Passenger) &#123;</span><br><span class="line">            this.passengerService</span><br><span class="line">            .removePassenger(event)</span><br><span class="line">            .subscribe((data: Passenger) =&gt; &#123;</span><br><span class="line">            this.passengers = this.passengers.filter((passenger: Passenger) =&gt; &#123;</span><br><span class="line">                return passenger.id != event.id;</span><br><span class="line">            &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Everytime <code>db.json</code> file is modified, server need to be restarted to update the changes</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-Custom-Headers-and-RequestOptions"><a href="#5-Custom-Headers-and-RequestOptions" class="headerlink" title="5. Custom Headers and RequestOptions"></a>5. Custom Headers and RequestOptions</h2><ol>
+<li>In <code>updatePassenger</code> method, we are defaulty using application <code>json</code></li>
+<li>Creating a <strong>Header</strong> that we’ll send along with our http requests<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Http, Response, Headers, RequestOptions &#125; from &apos;@angular/http&apos;;</span><br><span class="line"></span><br><span class="line">let headers = new Headers(&#123;</span><br><span class="line">     &apos;Content-Type&apos;: &apos;application/json&apos;</span><br><span class="line">   &#125;);</span><br><span class="line">   let options = new RequestOptions(&#123;</span><br><span class="line">     headers: headers</span><br><span class="line">   &#125;);</span><br><span class="line"></span><br><span class="line">   return this.http</span><br><span class="line">     .put(`$&#123;PASSENGER_API&#125;/$&#123;passenger.id&#125;`, passenger, options)</span><br><span class="line">     .map((response: Response) =&gt; &#123;</span><br><span class="line">       return response.json();</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="6-Http-Promises-alternative"><a href="#6-Http-Promises-alternative" class="headerlink" title="6. Http Promises alternative"></a>6. Http Promises alternative</h2><ol>
+<li>We can use <code>toPromise</code> to replace <code>map</code> (<code>Promise</code> to replace <code>Observable</code>)<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;rxjs/add/operator/toPromise&apos;;</span><br><span class="line"></span><br><span class="line">getPassengers(): Promise&lt;Passenger[]&gt; &#123;</span><br><span class="line">   return this.http</span><br><span class="line">     .get(PASSENGER_API)</span><br><span class="line">     .toPromise()</span><br><span class="line">     .then((response: Response) =&gt; &#123;</span><br><span class="line">       return response.json();</span><br><span class="line">     &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>The <code>subscribe</code> method also need to be replaced by <code>then</code> method</li>
+</ul>
+<h4 id="7-Observable-catch-error-handling"><a href="#7-Observable-catch-error-handling" class="headerlink" title="7. Observable.catch error handling"></a>7. Observable.catch error handling</h4><ol>
+<li>First we need to import the <code>error</code> and <code>catch</code> from <strong>rxjs</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;rxjs/add/operator/catch&apos;;</span><br><span class="line">import &apos;rxjs/add/observable/throw&apos;;</span><br><span class="line"></span><br><span class="line">return this.http</span><br><span class="line">     .get(PASSENGER_API)</span><br><span class="line">     .map((response: Response) =&gt; &#123;</span><br><span class="line">       return response.json();</span><br><span class="line">   &#125;).catch((error: any) =&gt; Observable.throw(error.json()));</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Template-driven-Forms-Inputs-and-Validation"><a href="#Template-driven-Forms-Inputs-and-Validation" class="headerlink" title="Template-driven Forms, Inputs and Validation"></a>Template-driven Forms, Inputs and Validation</h1><h2 id="1-Forms-container-component"><a href="#1-Forms-container-component" class="headerlink" title="1. Forms container component"></a>1. Forms container component</h2><ol>
+<li><p>Create a new <code>PassengerViewrComponent</code> to display any one of the passengers</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export class PassengerViewerComponent implements OnInit &#123;</span><br><span class="line">  passenger: Passenger;</span><br><span class="line">  constructor(private passengerService: PassengerDashboardService) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    this.passengerService</span><br><span class="line">      .getPassenger(1)</span><br><span class="line">      .subscribe((data: Passenger) =&gt; this.passenger = data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">getPassenger(id: number): Observable&lt;Passenger&gt; &#123;</span><br><span class="line">    return this.http</span><br><span class="line">    .get(`$&#123;PASSENGER_API&#125;/$&#123;id&#125;`)</span><br><span class="line">    .map((response: Response) =&gt; response.json())</span><br><span class="line">    .catch((error: any) =&gt; Observable.throw(error.json()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-Forms-stateless-component"><a href="#2-Forms-stateless-component" class="headerlink" title="2. Forms stateless component"></a>2. Forms stateless component</h2><ol>
+<li><p>We’re goint to use <code>PassengerFormComponent</code> to display the passenger details</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;passenger-form&apos;,</span><br><span class="line">  styleUrls: [&apos;passenger-form.component.scss&apos;],</span><br><span class="line">  template: `</span><br><span class="line">     &lt;form&gt;&lt;/form&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Using <code>FormsModule</code> to help with form component</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; FormsModule &#125; from &apos;@angular/forms&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>We’re going to use a bunch of inputs to recreate this via Angular template forms.</p>
+</li>
+<li><code>PassengerViewew</code> is binded to <code>PassengerForm</code>: anytime we make a request or want to update something, it’ll be populated back down to the <code>Form</code>. Then we’re going to emit that changed value via <code>event</code>, and make another <code>service</code> call to update this whole <strong>passenger object</strong>, which will then update the API (<code>db.json</code>)</li>
+</ol>
+<h2 id="3-ngForm-and-ngModel"><a href="#3-ngForm-and-ngModel" class="headerlink" title="3. ngForm and ngModel"></a>3. ngForm and ngModel</h2><ol>
+<li>Export the <code>ngForm</code>, which is an Angular directive, to keep track of all state changes and validation updated inside of our form</li>
+<li>A form-driven input need to have a <code>name</code></li>
+<li><code>ngModel</code> is synchronizing the form value, but only update to <code>form.value</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form #form=&quot;ngForm&quot; novalidate&gt;</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">         Passenger name:</span><br><span class="line">         &lt;input</span><br><span class="line">           type=&quot;text&quot;</span><br><span class="line">           name=&quot;fullname&quot;</span><br><span class="line">           [ngModel]=&quot;detail?.fullname&quot;&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">         Passenger ID:</span><br><span class="line">         &lt;input</span><br><span class="line">           type=&quot;text&quot;</span><br><span class="line">           name=&quot;id&quot;</span><br><span class="line">           [ngModel]=&quot;detail?.id&quot;&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">   &lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="4-Binding-to-radio-buttons"><a href="#4-Binding-to-radio-buttons" class="headerlink" title="4. Binding to radio buttons"></a>4. Binding to radio buttons</h2><ol>
+<li><p>Using radio button to toggle between passenger checked in or not, <code>ngModel</code> is used to bind our inital data</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">     &lt;label&gt;</span><br><span class="line">       &lt;input</span><br><span class="line">         type=&quot;radio&quot;</span><br><span class="line">         [value]=&quot;true&quot;</span><br><span class="line">         name=&quot;checkedIn&quot;</span><br><span class="line">         [ngModel]=&quot;detail?.checkedIn&quot;&gt;</span><br><span class="line">       Yes</span><br><span class="line">     &lt;/label&gt;</span><br><span class="line">     &lt;label&gt;</span><br><span class="line">       &lt;input</span><br><span class="line">         type=&quot;radio&quot;</span><br><span class="line">         [value]=&quot;false&quot;</span><br><span class="line">         name=&quot;checkedIn&quot;</span><br><span class="line">         [ngModel]=&quot;detail?.checkedIn&quot;&gt;</span><br><span class="line">       No</span><br><span class="line">     &lt;/label&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Using <code>ngModelChange</code> to display a <strong>CheckedInDate</strong> whenever Yes is chosen</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(ngModelChange)=&quot;toggleCheckIn($event)&quot;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">toggleCheckIn(checkedIn: boolean) &#123;</span><br><span class="line">    if (checkedIn) &#123;</span><br><span class="line">    this.detail.checkedInDate = Date.now();  //ms</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div *ngIf=&quot;form.value.checkedIn&quot;&gt;</span><br><span class="line">Check in date:</span><br><span class="line">&lt;input</span><br><span class="line">    type=&quot;number&quot;</span><br><span class="line">    name=&quot;checkedInDate&quot;</span><br><span class="line">    [ngModel]=&quot;detail?.checkedInDate&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="5-Binding-to-checkboxes"><a href="#5-Binding-to-checkboxes" class="headerlink" title="5. Binding to checkboxes"></a>5. Binding to checkboxes</h2><ol>
+<li><p><code>Checkbox</code> can also be used to give out boolean value based on whether it’s checked</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">     &lt;label&gt;</span><br><span class="line">       &lt;input</span><br><span class="line">         type=&quot;checkbox&quot;</span><br><span class="line">         name=&quot;checkedIn&quot;</span><br><span class="line">         [ngModel]=&quot;detail?.checkedIn&quot;</span><br><span class="line">         (ngModelChange)=&quot;toggleCheckIn($event)&quot;&gt;</span><br><span class="line">     &lt;/label&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Template</code> is the source of truth not your data model</p>
+</li>
+</ol>
+<h2 id="6-option-rendering-and-ngValue"><a href="#6-option-rendering-and-ngValue" class="headerlink" title="6.  option rendering, and ngValue"></a>6. <select> option rendering, and ngValue</select></h2><ol>
+<li><p>Create a <code>Baggage</code> interface to export interface containing <code>key</code> and <code>value</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export interface Baggage &#123;</span><br><span class="line">  key: string,</span><br><span class="line">  value: string</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Using <code>select</code> menu to let user choose baggage type</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">baggage: Baggage[] = [</span><br><span class="line">    &#123;</span><br><span class="line">    key: &quot;none&quot;,</span><br><span class="line">    value: &quot;no baggage&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      key: &quot;hand-only&quot;,</span><br><span class="line">      value: &quot;hand baggage&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      key: &quot;hold-only&quot;,</span><br><span class="line">      value: &quot;suitcase&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      key: &quot;hand-hold&quot;,</span><br><span class="line">      value: &quot;hand baggage and suitcase&quot;</span><br><span class="line">    &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>In order to pop up the initial value of select, we need to use <code>selected</code> property binding:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">     Luggage:</span><br><span class="line">     &lt;select</span><br><span class="line">       name=&quot;baggage&quot;</span><br><span class="line">       [ngModel]=&quot;detail?.baggage&quot;&gt;</span><br><span class="line">       &lt;option</span><br><span class="line">         *ngFor=&quot;let item of baggage&quot;</span><br><span class="line">         [value]=&quot;item.key&quot;</span><br><span class="line">         [selected]=&quot;item.key === detail?.baggage&quot;&gt;</span><br><span class="line">         &#123;&#123; item.value &#125;&#125;</span><br><span class="line">       &lt;/option&gt;</span><br><span class="line">     &lt;/select&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>We can use a single directive called <code>ngValue</code> to do the <code>selected</code> job instead</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;select</span><br><span class="line">	name=&quot;baggage&quot;</span><br><span class="line">	[ngModel]=&quot;detail?.baggage&quot;&gt;</span><br><span class="line">	&lt;option</span><br><span class="line">	  *ngFor=&quot;let item of Baggageage&quot;</span><br><span class="line">	  [ngValue]=&quot;item.key&quot;&gt;</span><br><span class="line">	  &#123;&#123; item.value &#125;&#125;</span><br><span class="line">	&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="7-Form-validation-and-error-states"><a href="#7-Form-validation-and-error-states" class="headerlink" title="7. Form validation and error states"></a>7. Form validation and error states</h2><ol>
+<li><code>ngModel</code> can be used to check validation, need <code>required</code> to display error if input is null</li>
+<li><p><code>dirty</code> property means that the form controlls value has been changed =&gt; make sure error message will not pop up before user even touch the input</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">     Passenger name:</span><br><span class="line">     &lt;input</span><br><span class="line">       type=&quot;text&quot;</span><br><span class="line">       name=&quot;fullname&quot;</span><br><span class="line">       required</span><br><span class="line">       #fullname=&quot;ngModel&quot;</span><br><span class="line">       [ngModel]=&quot;detail?.fullname&quot;&gt;</span><br><span class="line">      &lt;div *ngIf=&quot;fullname.errors?.required &amp;&amp; fullname.dirty&quot; class=&quot;error&quot;&gt;</span><br><span class="line">        Passenger name is required!</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">margin: 0 0 20px;</span><br><span class="line">&#125;</span><br><span class="line">.error&#123;</span><br><span class="line">color: #da6969;</span><br><span class="line">font-size: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>touched</code> property means if user have touched the input</p>
+</li>
+<li><code>form.valid</code> and <code>form.invalid</code> can also be used to check validation </li>
+<li><code>minlength</code> property can be used to check the minimum length of input<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">     Passenger ID:</span><br><span class="line">     &lt;input</span><br><span class="line">       type=&quot;text&quot;</span><br><span class="line">       name=&quot;id&quot;</span><br><span class="line">       required</span><br><span class="line">       minlength=&quot;2&quot;</span><br><span class="line">       #id=&quot;ngModel&quot;</span><br><span class="line">       [ngModel]=&quot;detail?.id&quot;&gt;</span><br><span class="line">     &lt;div *ngIf=&quot;id.errors?.required &amp;&amp; id.dirty&quot; class=&quot;error&quot;&gt;</span><br><span class="line">       Passenger ID is required!</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">     &lt;div *ngIf=&quot;id.errors?.minlength &amp;&amp; id.dirty&quot; class=&quot;error&quot;&gt;</span><br><span class="line">       Passenger ID should be longer than 2 digits!</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="8-Dynamically-disabling-submit"><a href="#8-Dynamically-disabling-submit" class="headerlink" title="8. Dynamically disabling submit"></a>8. Dynamically disabling submit</h2><ol>
+<li>If button has a <code>submit</code> type, the form will automatically bubble a sumbit event to it</li>
+<li>Using <code>diabled</code> property to diable to the button if form is invalid<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button</span><br><span class="line">     type=&quot;submit&quot;</span><br><span class="line">     [disabled]=&quot;form.invalid&quot;&gt;</span><br><span class="line">     Update passenger</span><br><span class="line">   &lt;/button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="9-ngSubmit-and-stateless-Output"><a href="#9-ngSubmit-and-stateless-Output" class="headerlink" title="9. ngSubmit and stateless @Output"></a>9. ngSubmit and stateless @Output</h2><ol>
+<li><p>Using <code>ngSubmit</code> to handle submit function</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form (ngSubmit)=&quot;handleSubmit(form.value, form.valid)&quot; #form=&quot;ngForm&quot; novalidate&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The component should not directly talk to API, so we use <code>Output</code> to give data back to <strong>containers</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Output()</span><br><span class="line">   update: EventEmitter&lt;Passenger&gt; = new EventEmitter&lt;Passenger&gt;();</span><br><span class="line"></span><br><span class="line">   handleSubmit(passenger: Passenger, isValid: boolean) &#123;</span><br><span class="line">    if (isValid) &#123;</span><br><span class="line">      this.update.emit(passenger);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;passenger-form</span><br><span class="line">    [detail]=&quot;passenger&quot;</span><br><span class="line">    (update)=&quot;onUpdatePassenger($event)&quot;&gt;</span><br><span class="line">    &lt;/passenger-form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Using <code>PassengerService</code> to update passenger to API:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">onUpdatePassenger(event: Passenger) &#123;</span><br><span class="line">    this.passengerService</span><br><span class="line">      .updatePassenger(event)</span><br><span class="line">      .subscribe((data: Passenger) =&gt; &#123;</span><br><span class="line">        this.passenger = Object.assign(&#123;&#125;, this.passenger, event);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="Component-Routing"><a href="#Component-Routing" class="headerlink" title="Component Routing"></a>Component Routing</h1><h2 id="1-Base-href-and-RouteModule"><a href="#1-Base-href-and-RouteModule" class="headerlink" title="1. Base href and RouteModule"></a>1. Base href and RouteModule</h2><ol>
+<li><code>&lt;base href=&quot;/&quot;&gt;</code> must be included in <strong>index.html</strong> to make the routing work properly</li>
+<li><code>RouterModule</code> can be used to deal with all the routing, style navigation, etc.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; RouterModule&#125; from &apos;@angular/router&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-Root-module-routes-and-outlet"><a href="#2-Root-module-routes-and-outlet" class="headerlink" title="2. Root module routes and outlet"></a>2. Root module routes and outlet</h2><ol>
+<li><p>In <code>app.module.ts</code>, instead of imports <code>RouterModule</code>, we should imports its method</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">imports: [</span><br><span class="line">	RouterModule.forRoot(routes)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const routes: Routes = [</span><br><span class="line">&#123; path: &apos;&apos;, component: HomeComponent, pathMatch: &apos;full&apos; &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>pathMatch: &#39;full&#39;</code> is used to match that empty path string</li>
+</ul>
+</li>
+<li><code>router-outlet</code> is directive via the <strong>Router</strong> which is essentially a placeholder where our components will be injected</li>
+</ol>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2019/03/08/Some-Other-Knowledge-about-Angular/" data-toggle="tooltip" data-placement="top" title="Some Other Knowledge about Angular">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Services-Http-and-Observables"><span class="toc-text">Services, Http and Observables</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Data-Services-and-Dependency-Injection"><span class="toc-text">1. Data Services and Dependency Injection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Understanding-Injectable"><span class="toc-text">2. Understanding @Injectable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Http-data-fetching-with-Observables"><span class="toc-text">3. Http data fetching with Observables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Http-put-delete-with-immutable-state"><span class="toc-text">4. Http put, delete with immutable state</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Custom-Headers-and-RequestOptions"><span class="toc-text">5. Custom Headers and RequestOptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Http-Promises-alternative"><span class="toc-text">6. Http Promises alternative</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Observable-catch-error-handling"><span class="toc-text">7. Observable.catch error handling</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#Template-driven-Forms-Inputs-and-Validation"><span class="toc-text">Template-driven Forms, Inputs and Validation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Forms-container-component"><span class="toc-text">1. Forms container component</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Forms-stateless-component"><span class="toc-text">2. Forms stateless component</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-ngForm-and-ngModel"><span class="toc-text">3. ngForm and ngModel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Binding-to-radio-buttons"><span class="toc-text">4. Binding to radio buttons</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Binding-to-checkboxes"><span class="toc-text">5. Binding to checkboxes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-option-rendering-and-ngValue"><span class="toc-text">6.  option rendering, and ngValue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Form-validation-and-error-states"><span class="toc-text">7. Form validation and error states</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Dynamically-disabling-submit"><span class="toc-text">8. Dynamically disabling submit</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-ngSubmit-and-stateless-Output"><span class="toc-text">9. ngSubmit and stateless @Output</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Routing"><span class="toc-text">Component Routing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Base-href-and-RouteModule"><span class="toc-text">1. Base href and RouteModule</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Root-module-routes-and-outlet"><span class="toc-text">2. Root module routes and outlet</span></a></li></ol></li>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#-Angular" title="-Angular">-Angular</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "jinyang_tang";
+    var disqus_identifier = "http://jinyang.github.io/2019/03/08/Ultimate-Courses-Angular-2/";
+    var disqus_url = "http://jinyang.github.io/2019/03/08/Ultimate-Courses-Angular-2/";
+
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/sophia.tang.982">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://github.com/sophiayang128">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/jinyang-tang-4730887b/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Jinyang 2019
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://jinyang.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="http://po16szslz.bkt.clouddn.com/author_img.jpg">
+</body>
+
+</html>
