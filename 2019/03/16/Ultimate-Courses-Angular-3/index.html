@@ -174,7 +174,23 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h2 id="3-Wildcard-routes-for-404-handling"><a href="#3-Wildcard-routes-for-404-handling" class="headerlink" title="3.Wildcard routes for 404 handling"></a>3.Wildcard routes for 404 handling</h2><ol>
+                <h1 id="Component-Routing"><a href="#Component-Routing" class="headerlink" title="Component Routing"></a>Component Routing</h1><h2 id="1-Base-href-and-RouteModule"><a href="#1-Base-href-and-RouteModule" class="headerlink" title="1. Base href and RouteModule"></a>1. Base href and RouteModule</h2><ol>
+<li><code>&lt;base href=&quot;/&quot;&gt;</code> must be included in <strong>index.html</strong> to make the routing work properly</li>
+<li><code>RouterModule</code> can be used to deal with all the routing, style navigation, etc.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; RouterModule&#125; from &apos;@angular/router&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2-Root-module-routes-and-outlet"><a href="#2-Root-module-routes-and-outlet" class="headerlink" title="2. Root module routes and outlet"></a>2. Root module routes and outlet</h2><ol>
+<li><p>In <code>app.module.ts</code>, instead of imports <code>RouterModule</code>, we should imports its method</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">imports: [</span><br><span class="line">	RouterModule.forRoot(routes)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const routes: Routes = [</span><br><span class="line">&#123; path: &apos;&apos;, component: HomeComponent, pathMatch: &apos;full&apos; &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>pathMatch: &#39;full&#39;</code> is used to match that empty path string</li>
+</ul>
+</li>
+<li><code>router-outlet</code> is directive via the <strong>Router</strong> which is essentially a placeholder where our components will be injected</li>
+<li>Components will be dynamically created when we change routes</li>
+</ol>
+<h2 id="3-Wildcard-routes-for-404-handling"><a href="#3-Wildcard-routes-for-404-handling" class="headerlink" title="3.Wildcard routes for 404 handling"></a>3.Wildcard routes for 404 handling</h2><ol>
 <li><p>Any routes that do not exist on application will be using <code>NotFoundComponent</code></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123; path: &apos;**&apos;, component: NotFoundComponent&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -231,7 +247,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Wildcard-routes-for-404-handling"><span class="toc-text">3.Wildcard routes for 404 handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Understanding-routerLink"><span class="toc-text">4. Understanding routerLink</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Styling-active-routes"><span class="toc-text">5. Styling active routes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Dynamic-navigation-with-ngFor"><span class="toc-text">6. Dynamic navigation with ngFor</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Component-Routing"><span class="toc-text">Component Routing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Base-href-and-RouteModule"><span class="toc-text">1. Base href and RouteModule</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Root-module-routes-and-outlet"><span class="toc-text">2. Root module routes and outlet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Wildcard-routes-for-404-handling"><span class="toc-text">3.Wildcard routes for 404 handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Understanding-routerLink"><span class="toc-text">4. Understanding routerLink</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Styling-active-routes"><span class="toc-text">5. Styling active routes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Dynamic-navigation-with-ngFor"><span class="toc-text">6. Dynamic navigation with ngFor</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
