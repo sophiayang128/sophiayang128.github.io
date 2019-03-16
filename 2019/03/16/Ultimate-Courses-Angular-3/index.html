@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        Some Other Knowledge about Angular｜Jinyang&#39;s Blog
+        Ultimate Courses Angular 3｜Jinyang&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://jinyang.github.io/2019/03/08/Some-Other-Knowledge-about-Angular/">
+    <link rel="canonical" href="http://jinyang.github.io/2019/03/16/Ultimate-Courses-Angular-3/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -127,13 +127,13 @@
 <!--only post-->
 
 
-<img class="wechat-title-img" src="http://po16szslz.bkt.clouddn.com/background_img_3.jpg">
+<img class="wechat-title-img" src="http://po16szslz.bkt.clouddn.com/background_img_5.jpg">
 
 
 <style>
     
     header.intro-header {
-        background-image: url('http://po16szslz.bkt.clouddn.com/background_img_3.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
+        background-image: url('http://po16szslz.bkt.clouddn.com/background_img_5.jpg?imageView2/1/w/1400/h/400/interlace/1/q/90')
     }
 
     
@@ -144,12 +144,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>Some Other Knowledge about Angular</h1>
+                    <h1>Ultimate Courses Angular 3</h1>
                     
                     <span class="meta">
                           Author: Jinyang Tang
                         <span>
-                          Date: 2019-03-08
+                          Date: 2019-03-16
                          </span>
                     </span>
                     <div class="tags text-center">
@@ -163,7 +163,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            Some Other Knowledge about Angular
+            Ultimate Courses Angular 3
         </span>
     </div>
 </header>
@@ -174,15 +174,35 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="Some-other-knowledge"><a href="#Some-other-knowledge" class="headerlink" title="Some other knowledge"></a>Some other knowledge</h1><ol>
-<li><code>div</code>: block-line =&gt; like having a line-break before and after </li>
-<li><code>span</code>: in-line =&gt; small chunck of HTML inside a line</li>
-<li><code>ul</code>: unordered list</li>
-<li><code>li</code>: an item in a list</li>
-<li>Use the <code>constructor</code> to initialize <strong>class members</strong> and for <strong>dependency injection</strong>. Use <code>ngOnInit</code> for <strong>initialization work</strong>.</li>
-<li><code>immutable operation</code>: takes input (object or array) and returns a new copy/modified copy of the input, thereby <strong>creating a new memory location</strong></li>
-<li><code>constructor</code> is used for a <code>smart/container component</code></li>
-<li><code>nav</code>: Notice that NOT all links of a document should be inside a <code>nav</code> element. The <code>nav</code> element is intended only for major block of navigation links.</li>
+                <h2 id="3-Wildcard-routes-for-404-handling"><a href="#3-Wildcard-routes-for-404-handling" class="headerlink" title="3.Wildcard routes for 404 handling"></a>3.Wildcard routes for 404 handling</h2><ol>
+<li><p>Any routes that do not exist on application will be using <code>NotFoundComponent</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123; path: &apos;**&apos;, component: NotFoundComponent&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Similar to the <code>HomeComponent</code>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Component &#125; from &apos;@angular/core&apos;;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: &apos;not-found&apos;,</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      Not found</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export class NotFoundComponent &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="4-Understanding-routerLink"><a href="#4-Understanding-routerLink" class="headerlink" title="4. Understanding routerLink"></a>4. Understanding routerLink</h2><ol>
+<li><p><code>routerLink</code> is used to create navigation through pages</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a routerLink=&quot;/&quot;&gt;</span><br><span class="line">       Home</span><br><span class="line">   &lt;/a&gt;</span><br><span class="line">   &lt;a routerLink=&quot;/oops&quot;&gt;</span><br><span class="line">       404</span><br><span class="line">   &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>routerLink</code> is an Angular directive which can take in values, but also be used for data binding</p>
+</li>
+</ol>
+<h2 id="5-Styling-active-routes"><a href="#5-Styling-active-routes" class="headerlink" title="5. Styling active routes"></a>5. Styling active routes</h2><ol>
+<li><p><code>routerLinkActive</code> can add <code>active</code> class to the link, where we can do styling</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;nav class = &quot;nav&quot;&gt;</span><br><span class="line">     &lt;a</span><br><span class="line">       routerLink=&quot;/&quot;</span><br><span class="line">       routerLinkActive=&quot;active&quot;&gt;</span><br><span class="line">       Home</span><br><span class="line">     &lt;/a&gt;</span><br><span class="line">     &lt;a routerLink=&quot;/oops&quot;</span><br><span class="line">        routerLinkActive=&quot;active&quot;&gt;</span><br><span class="line">        404</span><br><span class="line">     &lt;/a&gt;</span><br><span class="line">   &lt;/nav&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.nav &#123;</span><br><span class="line">margin: 0 0 10px;</span><br><span class="line">padding: 0 0 20px;</span><br><span class="line">border-bottom: 1px solid #dce5f2;</span><br><span class="line">a &#123;</span><br><span class="line">    background: #3a4250;</span><br><span class="line">    color: #fff;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    margin: 0 2px;</span><br><span class="line">    border-radius: 2px;</span><br><span class="line">    &amp;.active &#123;</span><br><span class="line">    color: #b690f1;</span><br><span class="line">    background: #363c48;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>We need to use <code>routerLinkActiveOptions</code> to make the route to have exact match</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[routerLinkActiveOptions]=&quot;&#123;exact: true&#125;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="6-Dynamic-navigation-with-ngFor"><a href="#6-Dynamic-navigation-with-ngFor" class="headerlink" title="6. Dynamic navigation with ngFor"></a>6. Dynamic navigation with ngFor</h2><ol>
+<li><p>Using <code>ngFor</code> to dynamically create the link construct, in order to avoid specifying every link manually</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface Nav &#123;</span><br><span class="line">  link: string,</span><br><span class="line">  name: string,</span><br><span class="line">  exact: boolean</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a</span><br><span class="line">    *ngFor=&quot;let item of nav&quot;</span><br><span class="line">    [routerLink]=&quot;item.link&quot;</span><br><span class="line">    routerLinkActive=&quot;active&quot;</span><br><span class="line">    [routerLinkActiveOptions]=&quot;&#123;exact: item.exact&#125;&quot;&gt;</span><br><span class="line">    &#123;&#123; item.name &#125;&#125;</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export class AppComponent &#123;</span><br><span class="line">nav: Nav[] = [</span><br><span class="line">    &#123;</span><br><span class="line">    link: &apos;/&apos;,</span><br><span class="line">    name: &apos;Home&apos;,</span><br><span class="line">    exact: true</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">    link: &apos;/oops&apos;,</span><br><span class="line">    name: &apos;404&apos;,</span><br><span class="line">    exact: false</span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
                 <hr>
@@ -190,13 +210,9 @@
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2019/03/08/Ultimate-Courses-Angular-2/" data-toggle="tooltip" data-placement="top" title="Ultimate Courses Angular 2">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2019/03/07/Ultimate-Courses-Angular-1/" data-toggle="tooltip" data-placement="top" title="Ultimate Courses Angular 1">Next Post &rarr;</a>
+                        <a href="/2019/03/08/Ultimate-Courses-Angular-2/" data-toggle="tooltip" data-placement="top" title="Ultimate Courses Angular 2">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -215,7 +231,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Some-other-knowledge"><span class="toc-text">Some other knowledge</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Wildcard-routes-for-404-handling"><span class="toc-text">3.Wildcard routes for 404 handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Understanding-routerLink"><span class="toc-text">4. Understanding routerLink</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Styling-active-routes"><span class="toc-text">5. Styling active routes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Dynamic-navigation-with-ngFor"><span class="toc-text">6. Dynamic navigation with ngFor</span></a></li></ol>
                 </div>
             </div>
         </div>
